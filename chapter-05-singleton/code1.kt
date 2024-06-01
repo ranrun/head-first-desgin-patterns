@@ -16,27 +16,15 @@ class ChocolateBoiler private constructor() {
         }
     }
 
-    // private constructor(): ChocolateBoiler {
-    //     companion object {
-    //         // private var instance: ChocolateBoiler? = null
-    //         fun getInstance(): ChocolateBoiler {
-    //             if (instance == null) {
-    //                 instance = ChocolateBoiler()
-    //             }
-    //             return instance
-    //         }
-    //     }
-    // }
-
     var empty: Boolean = true
     var boiled: Boolean = false
 
     fun fill() {
         println("--- fill ---")
         if (isEmpty()) {
+            // fill the boiler with a milk/choclate mixture
             empty = false
             boiled = false
-            // fill the boiler with a milk/choclate mixture
         }
     }
 
@@ -69,6 +57,9 @@ class ChocolateBoiler private constructor() {
     }
 }
 
+//
+// main
+//
 fun main() {
     val chocolateBoiler = ChocolateBoiler.getInstance()
     println(System.identityHashCode(chocolateBoiler))

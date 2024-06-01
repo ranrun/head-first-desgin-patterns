@@ -1,6 +1,6 @@
-package com.example.observers
-
-// push
+//
+// observer pattern
+//
 
 interface Observer {
     fun update(temperature: Float , humidity: Float, pressure: Float, heatIndex: Float)
@@ -131,6 +131,9 @@ class WeatherData() : Subject {
 
 }
 
+//
+// main
+//
 fun main() {
     val weatherData = WeatherData()
     val currentConditionsDisplay = CurrentConditionsDisplay(weatherData)

@@ -1,6 +1,7 @@
 //
 // composite pattern
 //
+
 abstract class MenuComponent {
     
     abstract val name: String

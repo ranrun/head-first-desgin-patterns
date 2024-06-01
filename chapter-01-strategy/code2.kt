@@ -1,5 +1,9 @@
 //
-// Behaviors
+// strategy pattern
+//
+
+//
+// behavior interfaces
 //
 interface FlyBehavior {
     fun fly()
@@ -10,7 +14,8 @@ interface QuackBehavior {
 }
 
 //
-// Behaviors implementation
+// behaviors implementations
+//
 class FlyWithWings(): FlyBehavior {
     override fun fly() {
         println("I'm flying!!")
@@ -48,7 +53,7 @@ class Squeak(): QuackBehavior {
 }
 
 //
-// Ducks
+// ducks
 //
 abstract class Duck {
     var flyBehavior: FlyBehavior = FlyWithWings()
@@ -108,6 +113,9 @@ class ModelDuck(): Duck() {
     }
 }
 
+//
+// main
+//
 fun main() {
     println("--- Mallard Duck ---")
     val mallardDuck = MallardDuck()

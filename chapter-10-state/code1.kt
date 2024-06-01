@@ -1,8 +1,7 @@
 //
 // state pattern
 //
-// $ kotlinc code1.kt -include-runtime -d code1.jar
-// $ java -jar code1.jar MenuTest
+
 class GumballMachineOriginal {
 
     val SOLD_OUT = 0
@@ -215,6 +214,11 @@ class GumballMachine(
 
 }
 
+//
+// main
+//
+// $ kotlinc code1.kt -include-runtime -d code1.jar
+// $ java -jar code1.jar MenuTest
 fun main() {
     val gumballMachine = GumballMachine(5)
     gumballMachine.insertQuarter()

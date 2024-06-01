@@ -1,4 +1,8 @@
 //
+// decorator patter
+//
+
+//
 // interfaces
 //
 interface Beverage {
@@ -8,8 +12,6 @@ interface Beverage {
 
 interface CondimentDecorator : Beverage {
     var beverage: Beverage
-    // var description: String
-    // fun cost() : Double
 }
 
 //

@@ -1,3 +1,7 @@
+//
+// adapter pattern
+//
+
 interface Duck {
     fun quack()
     fun fly()
@@ -44,6 +48,9 @@ fun testDuck(duck: Duck) {
     duck.fly()
 }
 
+//
+// main
+//
 fun main() {
     val duck = MallardDuck()
 

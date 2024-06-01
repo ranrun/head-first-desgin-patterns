@@ -1,6 +1,7 @@
 //
-// iterator patter
+// iterator pattern
 //
+
 interface Iterator {
     fun hasNext(): Boolean
     fun next(): MenuItem
@@ -158,6 +159,9 @@ fun printMenu(iterator: Iterator) {
     }
 }
 
+//
+// main
+//
 fun main() {
     val pancakeHouseMenu = PancakeHouseMenu()
     val breakfastItems = pancakeHouseMenu.menuItems

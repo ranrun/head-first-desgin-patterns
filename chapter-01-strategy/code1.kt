@@ -1,5 +1,6 @@
-// kotlinc code1.kt -include-runtime -d code1.jar
-// java -jar code1.jar
+//
+// strategy anti-pattern
+//
 
 interface Duck {
     fun fly()
@@ -24,6 +25,9 @@ class WildTurkey() : Duck {
     }
 }
 
+//
+// main
+//
 fun main() {
     val mallard = Mallard()
     mallard.fly()
@@ -32,14 +36,4 @@ fun main() {
     val wildTurkey = WildTurkey()
     wildTurkey.fly()
     wildTurkey.quack()
-
-    var obj: WildTurkey? = WildTurkey()
-    obj = null
-    if (obj == null && obj === null) {
-        println("is null")
-    } else {
-        println("is not null")
-    }
-
-
 }

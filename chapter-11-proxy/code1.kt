@@ -5,17 +5,13 @@ import java.rmi.*
 import java.rmi.server.*
 
 //
-// state pattern
+// proxy pattern
 //
 //
 // $ kotlinc code1.kt -include-runtime -d code1.jar
 // $ rmiregistry & java -cp code1.jar GumballMachineTestDrive santafe.mightygumball.com 100
 // $ rmiregistry & java -cp code1.jar GumballMachineTestDrive boulder.mightygumball.com 200
 // $ rmiregistry & java -cp code1.jar GumballMachineTestDrive austin.mightygumball.com 250
-//
-// $ java -cp code1.jar GumballMachineTestDrive 127.0.0.1/santafe 100
-// $ java -cp code1.jar GumballMachineTestDrive 127.0.0.1/boulder 200
-// $ java -cp code1.jar GumballMachineTestDrive 127.0.0.1/austin 250
 //
 // $ java -cp code1.jar GumballMachineTestDrive santafe.mightygumball.com 100
 // $ java -cp code1.jar GumballMachineTestDrive boulder.mightygumball.com 200
@@ -158,25 +154,6 @@ constructor(
         soldOutState = SoldOutState(this)
         state = noQuarterState
     }
-
-    // @Throws(RemoteException::class)
-    // constructor(_location: String, _count: Int) {
-    //     // location = _location
-    //     count = _count
-    // }
-
-
-    // @Throws(RemoteException::class)
-    // constructor() {
-    //     location = "Empty"
-    //     count = 0
-    // }
-
-    // @Throws(RemoteException::class)
-    // constructor(): this("Empty") {
-    //     // location = "Empty"
-    //     count = 0
-    // }
 
     fun insertQuarter() {
         state.insertQuarter()
