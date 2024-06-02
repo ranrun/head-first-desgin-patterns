@@ -1,6 +1,10 @@
-//
-// state pattern
-//
+/**
+ * State Pattern
+ *
+ * The State Pattern allows an object to alter its behavior
+ * when its internal state changes. The object with appear to
+ * change its class.
+ */
 
 class GumballMachineOriginal {
 

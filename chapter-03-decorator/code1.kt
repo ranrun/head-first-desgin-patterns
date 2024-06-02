@@ -1,6 +1,11 @@
-//
-// decorator patter
-//
+/**
+ * Decorator Pattern
+ *
+ * The Decorator Pattern attaches additional
+ * responsibilities to an objcet dynamically.
+ * Decorators provide a flexible alternative to
+ * subclassing for extending functionality.
+ */
 
 //
 // interfaces

@@ -1,6 +1,6 @@
-//
-// factory pattern
-//
+/**
+ * Factory Pattern
+ */
 
 interface Pizza {
     fun prepare()

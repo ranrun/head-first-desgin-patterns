@@ -1,6 +1,6 @@
-//
-// strategy anti-pattern
-//
+/**
+ * Strategy Anti-pattern
+ */
 
 interface Duck {
     fun fly()

@@ -1,6 +1,11 @@
-//
-// observer pattern
-//
+/**
+ * Observer Pattern
+ *
+ * The Observer Pattern defines a one-to-many
+ * dependency between objets so that when one
+ * object changes state, all of its dependents are
+ * notified and updated automatically.
+ */
 
 interface Observer {
     fun update(temperature: Float , humidity: Float, pressure: Float, heatIndex: Float)

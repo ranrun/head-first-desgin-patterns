@@ -4,10 +4,13 @@ import java.io.Serializable
 import java.rmi.*
 import java.rmi.server.*
 
-//
-// proxy pattern
-//
-//
+/** 
+ * Proxy Pattern
+ *
+ * The Proxy Pattern provides a surrogate or
+ * placeholder for another object to control access to it.
+ */
+
 // $ kotlinc code1.kt -include-runtime -d code1.jar
 // $ rmiregistry & java -cp code1.jar GumballMachineTestDrive santafe.mightygumball.com 100
 // $ rmiregistry & java -cp code1.jar GumballMachineTestDrive boulder.mightygumball.com 200
