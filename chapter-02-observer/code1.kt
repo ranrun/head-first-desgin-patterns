@@ -1,10 +1,14 @@
 /**
  * Observer Pattern
  *
- * The Observer Pattern defines a one-to-many
- * dependency between objets so that when one
- * object changes state, all of its dependents are
- * notified and updated automatically.
+ * The Observer Pattern defines a one-to-many dependency between objets so that
+ * when one object changes state, all of its dependents are notified and
+ * updated automatically.
+ *
+ * Design Principle
+ *
+ * - Strive for loosely coupled designs between objects that interact.
+ *
  */
 
 interface Observer {

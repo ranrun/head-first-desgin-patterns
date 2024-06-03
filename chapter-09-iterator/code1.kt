@@ -1,10 +1,13 @@
 /*
  * Iterator Pattern
  *
- * The Interator Pattern provides a way to
- * access the elements of an aggregate object
- * sequentially without exposing its underlying
- * representation.
+ * The Interator Pattern provides a way to access the elements of an aggregate
+ * object sequentially without exposing its underlying representation.
+ *
+ * Design Principle
+ *
+ * - A class should have only one reason to change.
+ *
  */
 
 interface Iterator {

@@ -1,8 +1,8 @@
-import java.lang.reflect.*
-
 /**
- * Remote Proxy Pattern
+ * Protection Proxy Pattern
  */
+
+import java.lang.reflect.*
 
 interface Person {
     var name: String

@@ -1,14 +1,18 @@
 /**
  * Adapter pattern
  *
- * The Adapater Pattern converts the interface of a class
- * into another interface the clients expect. Adapter lets
- * classes work together that couldn't otherwise becasue of
- * incompatible interfaces.
+ * The Adapater Pattern converts the interface of a class into another
+ * interface the clients expect. Adapter lets classes work together that
+ * couldn't otherwise becasue of incompatible interfaces.
  *
- * The Facade Pattern provides a unified interface to a
- * set of interfaces in a subsystem. Facade defines a higer-
- * level interface that makes the subsystemeasier to use.
+ * The Facade Pattern provides a unified interface to a set of interfaces in a
+ * subsystem. Facade defines a higer-level interface that makes the
+ * subsystem easier to use.
+ *
+ * Design Principle
+ *
+ * - Principle of Least Knowledge: talk only to your immediate friends.
+ *
  */
 
 interface Duck {

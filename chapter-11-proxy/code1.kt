@@ -1,28 +1,27 @@
-package compute
+/** 
+ * Proxy Pattern
+ *
+ * The Proxy Pattern provides a surrogate or placeholder for another object to
+ * control access to it.
+ *
+ * Remote Proxy
+ * With the Remote Proxy, the proxy acts as a local representative for an
+ * object that lives in a different JVM. A method call on the proxy results in
+ * the call  being transferred over the wire and invoked remotely, and the
+ * result being returned back to the proxy and then to the client.
+ *
+ * Virtual Proxy (no example, just definition)
+ * The Virtual Proxy acts as a representative for an object that may be
+ * expensive to create. The Virtual Proxy often defers the creation of the
+ * object until it is needed; the Virtual Proxy also acts as a surrogate for
+ * the object before and while it is being created. After that, the proxy
+ * delegates requests directly to the RealSubject.
+ *
+ */
 
 import java.io.Serializable
 import java.rmi.*
 import java.rmi.server.*
-
-/** 
- * Proxy Pattern
- *
- * The Proxy Pattern provides a surrogate or
- * placeholder for another object to control access to it.
- */
-
-// $ kotlinc code1.kt -include-runtime -d code1.jar
-// $ rmiregistry & java -cp code1.jar GumballMachineTestDrive santafe.mightygumball.com 100
-// $ rmiregistry & java -cp code1.jar GumballMachineTestDrive boulder.mightygumball.com 200
-// $ rmiregistry & java -cp code1.jar GumballMachineTestDrive austin.mightygumball.com 250
-//
-// $ java -cp code1.jar GumballMachineTestDrive santafe.mightygumball.com 100
-// $ java -cp code1.jar GumballMachineTestDrive boulder.mightygumball.com 200
-// $ java -cp code1.jar GumballMachineTestDrive austin.mightygumball.com 250
-// $ java -cp code1.jar GumballMonitorTestDrive
-
-// jar cfm code1.jar manifest.txt compute/*.class
-
 
 interface State : Serializable {
     fun insertQuarter()
@@ -224,6 +223,17 @@ class GumballMonitor(val machine: GumballMachineRemote) {
     }
 }
 
+/**
+ * $ kotlinc code1.kt -include-runtime -d code1.jar
+ *
+ * make sure rmiregistry is running in the background before running
+ * the test drive
+ *
+ * $ java -cp code1.jar GumballMachineTestDrive santafe.mightygumball.com 100
+ * $ java -cp code1.jar GumballMachineTestDrive boulder.mightygumball.com 200
+ * $ java -cp code1.jar GumballMachineTestDrive austin.mightygumball.com 250
+ * $ java -cp code1.jar GumballMonitorTestDrive
+ */
 class GumballMonitorTestDrive() {
     companion object {
         @JvmStatic
