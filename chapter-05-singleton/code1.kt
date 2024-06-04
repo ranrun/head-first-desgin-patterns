@@ -13,7 +13,7 @@ class ChocolateBoiler private constructor() {
     companion object {
         private var instance : ChocolateBoiler? = null
         @Volatile
-        private val lock = ReentrantLock()
+        private var lock = ReentrantLock()
         fun getInstance(): ChocolateBoiler {
             if (instance == null) {
                 synchronized(lock) {
@@ -65,23 +65,25 @@ class ChocolateBoiler private constructor() {
     }
 }
 
-//
-// main
-//
-fun main() {
-    val chocolateBoiler = ChocolateBoiler.getInstance()
-    println(System.identityHashCode(chocolateBoiler))
-    println("--- chocolateBoiler ---")
-    println(chocolateBoiler)
-    chocolateBoiler.fill()
-    println(chocolateBoiler)
-    chocolateBoiler.boil()
-    println(chocolateBoiler)
+// $ kotlinc code1.kt -include-runtime -d code1.jar
+// $ java -jar code1.jar ChocolateController
+object ChocolateController {
+    @JvmStatic
+    fun main(args: Array<String>) {
+        val chocolateBoiler = ChocolateBoiler.getInstance()
+        println("identity: " + System.identityHashCode(chocolateBoiler))
+        println("--- chocolateBoiler ---")
+        println(chocolateBoiler)
+        chocolateBoiler.fill()
+        println(chocolateBoiler)
+        chocolateBoiler.boil()
+        println(chocolateBoiler)
 
-    println("--- chocolateBoiler2 ---")
-    val chocolateBoiler2 = ChocolateBoiler.getInstance()
-    println(System.identityHashCode(chocolateBoiler2))
-    println(chocolateBoiler2)
-    chocolateBoiler2.fill()
-    println(chocolateBoiler2)
+        println("--- chocolateBoiler2 ---")
+        val chocolateBoiler2 = ChocolateBoiler.getInstance()
+        println("identity: " + System.identityHashCode(chocolateBoiler2))
+        println(chocolateBoiler2)
+        chocolateBoiler2.fill()
+        println(chocolateBoiler2)
+    }
 }

@@ -61,22 +61,24 @@ fun testDuck(duck: Duck) {
     duck.fly()
 }
 
-//
-// main
-//
-fun main() {
-    val duck = MallardDuck()
+// $ kotlinc code1.kt -include-runtime -d code1.jar
+// $ java -jar code1.jar DuckTestDrive
+object DuckTestDrive {
+    @JvmStatic
+    fun main(args: Array<String>) {
+        val duck = MallardDuck()
 
-    val turkey = WildTurkey()
-    val turkeyAdapter = TurkeyAdapter(turkey)
+        val turkey = WildTurkey()
+        val turkeyAdapter = TurkeyAdapter(turkey)
 
-    println("The Turkey says...")
-    turkey.gobble()
-    turkey.fly()
+        println("The Turkey says...")
+        turkey.gobble()
+        turkey.fly()
 
-    println("The Duck says...")
-    testDuck(duck)
+        println("The Duck says...")
+        testDuck(duck)
 
-    println("The TurkeyAdapter says...")
-    testDuck(turkeyAdapter)
+        println("The TurkeyAdapter says...")
+        testDuck(turkeyAdapter)
+    }
 }

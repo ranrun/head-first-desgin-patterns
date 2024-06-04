@@ -99,21 +99,23 @@ class Soy : CondimentDecorator {
     }
 }
 
-//
-// main
-//
-fun main() {
-    println("--- decorator ---")
+// $ kotlinc code1.kt -include-runtime -d code1.jar
+// $ java -jar code1.jar StarbuzzCoffee
+object StarbuzzCoffee {
+    @JvmStatic
+    fun main(args: Array<String>) {
+        println("--- decorator ---")
 
-    val espresso = Espresso()
-    println("espresso description: ${espresso.description}"
-        + ", cost: ${espresso.cost()}")
+        val espresso = Espresso()
+        println("espresso description: ${espresso.description}"
+            + ", cost: ${espresso.cost()}")
 
-    val beverage2 = Mocha(Mocha(Whip(DarkRoast())))
-    println("beverage2 description: ${beverage2.description}"
-        + ", cost: ${beverage2.cost()}")
+        val beverage2 = Mocha(Mocha(Whip(DarkRoast())))
+        println("beverage2 description: ${beverage2.description}"
+            + ", cost: ${beverage2.cost()}")
 
-    val beverage3 = Soy(Mocha(Whip(HouseBlend())))
-    println("beverage3 description: ${beverage3.description}"
-        + ", cost: ${beverage3.cost()}")
+        val beverage3 = Soy(Mocha(Whip(HouseBlend())))
+        println("beverage3 description: ${beverage3.description}"
+            + ", cost: ${beverage3.cost()}")
+    }
 }

@@ -80,22 +80,22 @@ class SimpleRemoteControl {
     }
 }
 
-class RemoteControl {
-    val onCommands = List<Command>(7)
-    val offCommands = List<Command>(7)
-}
+// $ kotlinc code1.kt -include-runtime -d code1.jar
+// $ java -jar code1.jar RemoteLoader
+object RemoteLoader {
+    @JvmStatic
+    fun main(args: Array<String>) {
+        val remote = SimpleRemoteControl()
+        val light = Light()
+        val garageDoor = GarageDoor()
+        // concrete command
+        val lightOn = LightOnCommand(light)
+        // concrete command
+        val garageOpen = GarageDoorOpenCommand(garageDoor)
 
-fun main() {
-    val remote = SimpleRemoteControl()
-    val light = Light()
-    val garageDoor = GarageDoor()
-    // concrete command
-    val lightOn = LightOnCommand(light)
-    // concrete command
-    val garageOpen = GarageDoorOpenCommand(garageDoor)
-
-    remote.setCommand(lightOn)
-    remote.buttonWasPressed()
-    remote.setCommand(garageOpen)
-    remote.buttonWasPressed()
+        remote.setCommand(lightOn)
+        remote.buttonWasPressed()
+        remote.setCommand(garageOpen)
+        remote.buttonWasPressed()
+    }
 }

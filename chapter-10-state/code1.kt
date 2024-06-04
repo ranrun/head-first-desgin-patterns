@@ -218,26 +218,26 @@ class GumballMachine(
 
 }
 
-//
-// main
-//
-// $ kotlinc code1.kt -include-runtime -d code1.jar
-// $ java -jar code1.jar MenuTest
-fun main() {
-    val gumballMachine = GumballMachine(5)
-    gumballMachine.insertQuarter()
-    gumballMachine.ejectQuarter()
+// $ kotlinc code1.kt -include-runtime -d code2.jar
+// $ java -jar code2.jar GumballMachineTestDrive
+object GumballMachineTestDrive {
+    @JvmStatic
+    fun main(args: Array<String>) {
+        val gumballMachine = GumballMachine(5)
+        gumballMachine.insertQuarter()
+        gumballMachine.ejectQuarter()
 
-    gumballMachine.insertQuarter()
-    gumballMachine.turnCrank()
-    gumballMachine.insertQuarter()
-    gumballMachine.turnCrank()
-    gumballMachine.insertQuarter()
-    gumballMachine.turnCrank()
-    gumballMachine.insertQuarter()
-    gumballMachine.turnCrank()
-    gumballMachine.insertQuarter()
-    gumballMachine.turnCrank()
-    gumballMachine.insertQuarter()
-    gumballMachine.turnCrank()
+        gumballMachine.insertQuarter()
+        gumballMachine.turnCrank()
+        gumballMachine.insertQuarter()
+        gumballMachine.turnCrank()
+        gumballMachine.insertQuarter()
+        gumballMachine.turnCrank()
+        gumballMachine.insertQuarter()
+        gumballMachine.turnCrank()
+        gumballMachine.insertQuarter()
+        gumballMachine.turnCrank()
+        gumballMachine.insertQuarter()
+        gumballMachine.turnCrank()
+    }
 }

@@ -140,24 +140,26 @@ class WeatherData() : Subject {
 
 }
 
-//
-// main
-//
-fun main() {
-    val weatherData = WeatherData()
-    val currentConditionsDisplay = CurrentConditionsDisplay(weatherData)
-    val statisticsDisplay = StatisticsDisplay(weatherData)
+// $ kotlinc code1.kt -include-runtime -d code1.jar
+// $ java -jar code1.jar WeatherStation
+object WeatherStation {
+    @JvmStatic
+    fun main(args: Array<String>) {
+        val weatherData = WeatherData()
+        val currentConditionsDisplay = CurrentConditionsDisplay(weatherData)
+        val statisticsDisplay = StatisticsDisplay(weatherData)
 
-    weatherData.setMeassurements(80f, 65f, 30.4f)
-    weatherData.setMeassurements(82f, 70f, 29.2f)
-    
-    currentConditionsDisplay.remove()
-    weatherData.setMeassurements(78f, 90f, 29.2f)
+        weatherData.setMeassurements(80f, 65f, 30.4f)
+        weatherData.setMeassurements(82f, 70f, 29.2f)
 
-    weatherData.removeObserver(statisticsDisplay)
-    
-    statisticsDisplay.remove()
-    weatherData.setMeassurements(99f,80f, 33.3f)
+        currentConditionsDisplay.remove()
+        weatherData.setMeassurements(78f, 90f, 29.2f)
 
-    println()
+        weatherData.removeObserver(statisticsDisplay)
+
+        statisticsDisplay.remove()
+        weatherData.setMeassurements(99f,80f, 33.3f)
+
+        println()
+    }
 }

@@ -374,6 +374,8 @@ class DuckSimulatorWithComposite {
     }
 }
 
+// kotlinc code1.kt -include-runtime -d code1.jar
+// java -cp code1.jar DuckSimulatorWithObserver
 class DuckSimulatorWithObserver {
     companion object {
         @JvmStatic

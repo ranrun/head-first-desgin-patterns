@@ -234,33 +234,31 @@ class GumballMonitor(val machine: GumballMachineRemote) {
  * $ java -cp code1.jar GumballMachineTestDrive austin.mightygumball.com 250
  * $ java -cp code1.jar GumballMonitorTestDrive
  */
-class GumballMonitorTestDrive() {
-    companion object {
-        @JvmStatic
-        fun main(args: Array<String>) {
-            val locations = listOf(
-                "rmi://santafe.mightygumball.com/gumballmachine",
-                "rmi://boulder.mightygumball.com/gumballmachine",
-                "rmi://austin.mightygumball.com/gumballmachine"
-            )
+object GumballMachineTestDrive {
+    @JvmStatic
+    fun main(args: Array<String>) {
+        val locations = listOf(
+            "rmi://santafe.mightygumball.com/gumballmachine",
+            "rmi://boulder.mightygumball.com/gumballmachine",
+            "rmi://austin.mightygumball.com/gumballmachine"
+        )
 
-            val monitors = mutableListOf<GumballMonitor>()
+        val monitors = mutableListOf<GumballMonitor>()
 
-            for (location in locations) {
-                try {
-                    val machine = Naming.lookup(location) as GumballMachineRemote
-                    val monitor = GumballMonitor(machine)
-                    monitors.add(monitor)
-                } catch (e: Exception) {
-                    println("GumballMonitorTestDrive ---")
-                    e.printStackTrace()
-                }
+        for (location in locations) {
+            try {
+                val machine = Naming.lookup(location) as GumballMachineRemote
+                val monitor = GumballMonitor(machine)
+                monitors.add(monitor)
+            } catch (e: Exception) {
+                println("GumballMonitorTestDrive ---")
+                e.printStackTrace()
             }
-
-            for (monitor in monitors) {
-                monitor.report()
-            }
-
         }
+
+        for (monitor in monitors) {
+            monitor.report()
+        }
+
     }
 }

@@ -167,37 +167,37 @@ fun printMenu(iterator: Iterator) {
     }
 }
 
-//
-// main
-//
-fun main() {
-    val pancakeHouseMenu = PancakeHouseMenu()
-    val breakfastItems = pancakeHouseMenu.menuItems
-    val pancakeIterator = pancakeHouseMenu.createIterator()
+// $ kotlinc code1.kt -include-runtime -d code1.jar
+// $ java -jar code1.jar MenuTestDrive
+object MenuTestDrive {
+    @JvmStatic
+    fun main(args: Array<String>) {
+        val pancakeHouseMenu = PancakeHouseMenu()
+        val breakfastItems = pancakeHouseMenu.menuItems
+        val pancakeIterator = pancakeHouseMenu.createIterator()
 
-    val dinerMenu = DinerMenu()
-    val lunchItems = dinerMenu.menuItems
-    val dinerIterator = dinerMenu.createIterator()
+        val dinerMenu = DinerMenu()
+        val lunchItems = dinerMenu.menuItems
+        val dinerIterator = dinerMenu.createIterator()
 
-    for (i in 0 until breakfastItems.size) {
-        val menuItem = breakfastItems.get(i)
-        print(menuItem.name + " ")
-        print(menuItem.price.toString() + " ")
-        println(menuItem.description + " ")
-    }
-    println("---")
-    for (i in 0 until lunchItems.size) {
-        val menuItem = lunchItems[i]
-        if (menuItem != null) {
+        for (i in 0 until breakfastItems.size) {
+            val menuItem = breakfastItems.get(i)
             print(menuItem.name + " ")
             print(menuItem.price.toString() + " ")
             println(menuItem.description + " ")
         }
+        println("---")
+        for (i in 0 until lunchItems.size) {
+            val menuItem = lunchItems[i]
+            if (menuItem != null) {
+                print(menuItem.name + " ")
+                print(menuItem.price.toString() + " ")
+                println(menuItem.description + " ")
+            }
+        }
+        println("---")
+        printMenu(pancakeIterator)
+        println("---")
+        printMenu(dinerIterator)
     }
-    println("---")
-    printMenu(pancakeIterator)
-    println("---")
-    printMenu(dinerIterator)
-
-
 }

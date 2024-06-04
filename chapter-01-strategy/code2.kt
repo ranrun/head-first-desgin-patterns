@@ -125,30 +125,32 @@ class ModelDuck(): Duck() {
     }
 }
 
-//
-// main
-//
-fun main() {
-    println("--- Mallard Duck ---")
-    val mallardDuck = MallardDuck()
-    mallardDuck.performFly()
-    mallardDuck.performQuack()
-    mallardDuck.swim()
-    mallardDuck.display()
+// $ kotlinc code2.kt -include-runtime -d code2.jar
+// $ java -jar code2.jar DuckSimulator
+object DuckSimulator {
+    @JvmStatic
+    fun main(args: Array<String>) {
+        println("--- Mallard Duck ---")
+        val mallardDuck = MallardDuck()
+        mallardDuck.performFly()
+        mallardDuck.performQuack()
+        mallardDuck.swim()
+        mallardDuck.display()
 
-    println("--- Rubber Ducky ---")
-    val rubberDucky = RubberDucky()
-    rubberDucky.performFly()
-    rubberDucky.performQuack()
-    rubberDucky.swim()
-    rubberDucky.display()
+        println("--- Rubber Ducky ---")
+        val rubberDucky = RubberDucky()
+        rubberDucky.performFly()
+        rubberDucky.performQuack()
+        rubberDucky.swim()
+        rubberDucky.display()
 
-    println("--- Model Duck ---")
-    val modelDuck = ModelDuck()
-    modelDuck.performFly()
-    modelDuck.setMyBehaviorFly(FlyRocketPowered())
-    modelDuck.performFly()
-    modelDuck.performQuack()
-    modelDuck.swim()
-    modelDuck.display()
+        println("--- Model Duck ---")
+        val modelDuck = ModelDuck()
+        modelDuck.performFly()
+        modelDuck.setMyBehaviorFly(FlyRocketPowered())
+        modelDuck.performFly()
+        modelDuck.performQuack()
+        modelDuck.swim()
+        modelDuck.display()
+    }
 }

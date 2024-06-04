@@ -53,7 +53,8 @@ class OwnerInvocationHandler(
                 return method.invoke(person, args!![0] as String)
             }
         } catch (e: Exception) {
-            e.printStackTrace()
+            // e.printStackTrace()
+            throw e
         }
         return null
     }
@@ -72,7 +73,8 @@ class NonOwnerInvocationHandler(
                 throw IllegalAccessException()
             }
         } catch (e: Exception) {
-            e.printStackTrace()
+            // e.printStackTrace()
+            throw e
         }
         return null
     }

@@ -93,13 +93,11 @@ class Menu(
     }
 }
 
-class MenuTest() {
-    // $ kotlinc code2.kt -include-runtime -d code2.jar
-    // $ java -jar code2.jar MenuTest
-    // $ java -cp code2.jar MenuTest
-    companion object {
-        @JvmStatic
-        fun main(args: Array<String>) {
+// $ kotlinc code1.kt -include-runtime -d code2.jar
+// $ java -jar code2.jar MenuTestDrive
+object MenuTestDrive {
+    @JvmStatic
+    fun main(args: Array<String>) {
             val menu1 = Menu("Dinner", "What you eat a night.")
             val menuItem1_1 = MenuItem("Burger", "Burger made with all beef", false, 5.99)
             val menuItem1_2 = MenuItem("Steak", "Steak. Great cut.", false, 6.99)

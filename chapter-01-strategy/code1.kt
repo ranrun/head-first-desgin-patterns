@@ -25,15 +25,17 @@ class WildTurkey() : Duck {
     }
 }
 
-//
-// main
-//
-fun main() {
-    val mallard = Mallard()
-    mallard.fly()
-    mallard.quack()
+// $ kotlinc code1.kt -include-runtime -d code1.jar
+// $ java -jar code1.jar DuckSimulator
+object DuckSimulator {
+    @JvmStatic
+    fun main(args: Array<String>) {
+        val mallard = Mallard()
+        mallard.fly()
+        mallard.quack()
 
-    val wildTurkey = WildTurkey()
-    wildTurkey.fly()
-    wildTurkey.quack()
+        val wildTurkey = WildTurkey()
+        wildTurkey.fly()
+        wildTurkey.quack()
+    }
 }
